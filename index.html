@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+        }
+        .countdown {
+            font-size: 24px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 1s, transform 1s;
+        }
+        #countdown {
+            font-weight: bold;
+            color: orangered;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <span id="countdown">3</span> seconds
+    </div>
+    <script>
+        var countdownElement = document.getElementById("countdown");
+        var countdown = 3;
+        function updateCountdown() {
+            countdownElement.textContent = countdown;
+            countdown--;
+
+            if (countdown < 0) {
+                window.location.href = "https://3mien.cloud"
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        setTimeout(function() {
+            var countdownElement = document.querySelector(".countdown");
+            countdownElement.style.opacity = 1;
+            countdownElement.style.transform = "scale(1)";
+            updateCountdown();
+        }, 1000);
+    </script>
+</body>
+</html>

